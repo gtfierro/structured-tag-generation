@@ -1,0 +1,1374 @@
+[
+{
+  "name": "ph",
+  "doc": "Project Haystack core definitions",
+  "uri": "u:https://project-haystack.org/def/ph",
+  "version": "4.0.1",
+  "kinds": [
+    {
+      "name": "Any",
+      "doc": "Any is the root of the type system"
+    },
+    {
+      "name": "Bool",
+      "superkind": "ph::Scalar",
+      "doc": "Boolean value 'true' or 'false'"
+    },
+    {
+      "name": "Choice",
+      "superkind": "ph::Trait",
+      "doc": "Choice models an exclusive set of tags"
+    },
+    {
+      "name": "Contains",
+      "superkind": "ph::Ref",
+      "doc": "Containment relationship as 'parent >> child'"
+    },
+    {
+      "name": "Coord",
+      "superkind": "ph::Scalar",
+      "doc": "Geographic coordinate in latitude/longitude formatted as 'C(lat,lng)'"
+    },
+    {
+      "name": "Date",
+      "superkind": "ph::Scalar",
+      "doc": "ISO 8601 date as year, month, day: '2011-06-07'"
+    },
+    {
+      "name": "DateTime",
+      "superkind": "ph::Scalar",
+      "doc": "ISO 8601 timestamp followed by timezone identifier"
+    },
+    {
+      "name": "DefMeta",
+      "superkind": "ph::Dict",
+      "doc": "Definition meta data tags"
+    },
+    {
+      "name": "Dict",
+      "superkind": "ph::Any",
+      "doc": "Dict is a map of tag name/value pairs."
+    },
+    {
+      "name": "Duration",
+      "superkind": "ph::Number",
+      "doc": "Number with a time unit such as \"ms\", \"sec\", \"min\", \"hr\", or \"day\""
+    },
+    {
+      "name": "Entity",
+      "superkind": "ph::Dict",
+      "doc": "Entity represents top-level dicts with a unique identifier",
+      "tags": [
+        {
+          "name": "dis",
+          "kind": "ph::Str",
+          "doc": "Display name for humans.  It should be short (less then 30\ncharacters), but fully descriptive of the entity or object.\n"
+        },
+        {
+          "name": "id",
+          "kind": "ph::Ref",
+          "doc": "Defines the unique identifier of an entity in system using a Ref value\ntype. The scope of an entity is undefined, but must be unique with a\ngiven system or project. This identifier may be used by other entities\nfor cross-referencing.\n"
+        }
+      ]
+    },
+    {
+      "name": "EnumRange",
+      "superkind": "ph::Str",
+      "doc": "Defines an eumeration of string keys.  The range may also be applied\nto format a Bool ordered as \"false,true\".  The string may be formatted\nin one of three ways:\n  - comma separated keys on one line\n  - keys separated by a \"\\n\" newline character\n  - unordred list formatted as a series of \"- key: description\"\n    list items which allows each key to be documented\n"
+    },
+    {
+      "name": "GeoPlace",
+      "superkind": "ph::Mixin",
+      "doc": "Geographic place",
+      "tags": [
+        {
+          "name": "geoAddr",
+          "kind": "ph::Str",
+          "doc": "Free form street address"
+        },
+        {
+          "name": "geoCity",
+          "kind": "ph::Str",
+          "doc": "Geographic city or locality name"
+        },
+        {
+          "name": "geoCoord",
+          "kind": "ph::Coord",
+          "doc": "Geographic coordinate as \"C(latitude,longitude)\""
+        },
+        {
+          "name": "geoCountry",
+          "kind": "ph::Str",
+          "doc": "Geographic country as [ISO 3166-1]`http://en.wikipedia.org/wiki/ISO_3166-1`\ntwo letter code.\n",
+          "enum": "\n      - AF: Afghanistan\n      - AX: Aland Islands\n      - AL: Albania\n      - DZ: Algeria\n      - AS: American Samoa\n      - AD: Andorra\n      - AO: Angola\n      - AI: Anguilla\n      - AQ: Antarctica\n      - AG: Antigua and Barbuda\n      - AR: Argentina\n      - AM: Armenia\n      - AW: Aruba\n      - AU: Australia\n      - AT: Austria\n      - AZ: Azerbaijan\n      - BS: Bahamas\n      - BH: Bahrain\n      - BD: Bangladesh\n      - BB: Barbados\n      - BY: Belarus\n      - BE: Belgium\n      - BZ: Belize\n      - BJ: Benin\n      - BM: Bermuda\n      - BT: Bhutan\n      - BO: Bolivia, Plurinational State of\n      - BO: Bolivia\n      - BA: Bosnia and Herzegovina\n      - BA: Bosnia\n      - BA: Herzegovina\n      - BW: Botswana\n      - BV: Bouvet Island\n      - BR: Brazil\n      - IO: British Indian Ocean Territory\n      - BN: Brunei Darussalam\n      - BG: Bulgaria\n      - BF: Burkina Faso\n      - BI: Burundi\n      - KH: Cambodia\n      - CM: Cameroon\n      - CA: Canada\n      - CV: Cape Verde\n      - KY: Cayman Islands\n      - CF: Central African Republic\n      - TD: Chad\n      - CL: Chile\n      - CN: China\n      - CX: Christmas Island\n      - CC: Cocos (keeling) Islands\n      - CC: Cocos\n      - CO: Colombia\n      - KM: Comoros\n      - CG: Congo\n      - CD: Congo, the Democratic Republic of the\n      - CK: Cook Islands\n      - CR: Costa Rica\n      - CI: Cote D'ivoire\n      - HR: Croatia\n      - CU: Cuba\n      - CY: Cyprus\n      - CZ: Czech Republic\n      - DK: Denmark\n      - DJ: Djibouti\n      - DM: Dominica\n      - DO: Dominican Republic\n      - EC: Ecuador\n      - EG: Egypt\n      - SV: El Salvador\n      - GQ: Equatorial Guinea\n      - ER: Eritrea\n      - EE: Estonia\n      - ET: Ethiopia\n      - FK: Falkland Islands (malvinas)\n      - FK: Falkland Islands\n      - FO: Faroe Islands\n      - FJ: Fiji\n      - FI: Finland\n      - FR: France\n      - GF: French Guiana\n      - PF: French Polynesia\n      - TF: French Southern Territories\n      - GA: Gabon\n      - GM: Gambia\n      - GE: Georgia\n      - DE: Germany\n      - GH: Ghana\n      - GI: Gibraltar\n      - GR: Greece\n      - GL: Greenland\n      - GD: Grenada\n      - GP: Guadeloupe\n      - GU: Guam\n      - GT: Guatemala\n      - GG: Guernsey\n      - GN: Guinea\n      - GW: Guinea-bissau\n      - GY: Guyana\n      - HT: Haiti\n      - HM: Heard Island and Mcdonald Islands\n      - VA: Holy See (vatican City State)\n      - VA: Vatican\n      - HN: Honduras\n      - HK: Hong Kong\n      - HU: Hungary\n      - IS: Iceland\n      - IN: India\n      - ID: Indonesia\n      - IR: Iran, Islamic Republic of\n      - IR: Iran\n      - IQ: Iraq\n      - IE: Ireland\n      - IM: Isle of Man\n      - IL: Israel\n      - IT: Italy\n      - JM: Jamaica\n      - JP: Japan\n      - JE: Jersey\n      - JO: Jordan\n      - KZ: Kazakhstan\n      - KE: Kenya\n      - KI: Kiribati\n      - KP: Korea, Democratic People's Republic of\n      - KR: Korea, Republic of\n      - KR: Korea\n      - KW: Kuwait\n      - KG: Kyrgyzstan\n      - LA: Lao People's Democratic Republic\n      - LA: Lao\n      - LV: Latvia\n      - LB: Lebanon\n      - LS: Lesotho\n      - LR: Liberia\n      - LY: Libyan Arab Jamahiriya\n      - LI: Liechtenstein\n      - LT: Lithuania\n      - LU: Luxembourg\n      - MO: Macao\n      - MK: Macedonia, the Former Yugoslav Republic of\n      - MK: Macedonia\n      - MG: Madagascar\n      - MW: Malawi\n      - MY: Malaysia\n      - MV: Maldives\n      - ML: Mali\n      - MT: Malta\n      - MH: Marshall Islands\n      - MQ: Martinique\n      - MR: Mauritania\n      - MU: Mauritius\n      - YT: Mayotte\n      - MX: Mexico\n      - FM: Micronesia, Federated States of\n      - FM: Micronesia\n      - MD: Moldova, Republic of\n      - MD: Moldova\n      - MC: Monaco\n      - MN: Mongolia\n      - ME: Montenegro\n      - MS: Montserrat\n      - MA: Morocco\n      - MZ: Mozambique\n      - MM: Myanmar\n      - NA: Namibia\n      - NR: Nauru\n      - NP: Nepal\n      - NL: Netherlands\n      - AN: Netherlands Antilles\n      - NC: New Caledonia\n      - NZ: New Zealand\n      - NI: Nicaragua\n      - NE: Niger\n      - NG: Nigeria\n      - NU: Niue\n      - NF: Norfolk Island\n      - MP: Northern Mariana Islands\n      - NO: Norway\n      - OM: Oman\n      - PK: Pakistan\n      - PW: Palau\n      - PS: Palestinian Territory, Occupied\n      - PS: Palestine\n      - PA: Panama\n      - PG: Papua New Guinea\n      - PY: Paraguay\n      - PE: Peru\n      - PH: Philippines\n      - PN: Pitcairn\n      - PL: Poland\n      - PT: Portugal\n      - PR: Puerto Rico\n      - QA: Qatar\n      - RE: Reunion\n      - RO: Romania\n      - RU: Russian Federation\n      - RW: Rwanda\n      - BL: Saint Barthelemy\n      - SH: Saint Helena, Ascension and Tristan Da Cunha\n      - SH: Saint Helena\n      - KN: Saint Kitts and Nevis\n      - LC: Saint Lucia\n      - MF: Saint Martin\n      - PM: Saint Pierre and Miquelon\n      - VC: Saint Vincent and the Grenadines\n      - WS: Samoa\n      - SM: San Marino\n      - ST: Sao Tome and Principe\n      - SA: Saudi Arabia\n      - SN: Senegal\n      - RS: Serbia\n      - SC: Seychelles\n      - SL: Sierra Leone\n      - SG: Singapore\n      - SK: Slovakia\n      - SI: Slovenia\n      - SB: Solomon Islands\n      - SO: Somalia\n      - ZA: South Africa\n      - GS: South Georgia and the South Sandwich Islands\n      - ES: Spain\n      - LK: Sri Lanka\n      - SD: Sudan\n      - SR: Suriname\n      - SJ: Svalbard and Jan Mayen\n      - SZ: Swaziland\n      - SE: Sweden\n      - CH: Switzerland\n      - SY: Syrian Arab Republic\n      - TW: Taiwan, Province of China\n      - TW: Taiwan\n      - TJ: Tajikistan\n      - TZ: Tanzania, United Republic of\n      - TZ: Tanzania\n      - TH: Thailand\n      - TL: Timor-leste\n      - TG: Togo\n      - TK: Tokelau\n      - TO: Tonga\n      - TT: Trinidad and Tobago\n      - TN: Tunisia\n      - TR: Turkey\n      - TM: Turkmenistan\n      - TC: Turks and Caicos Islands\n      - TV: Tuvalu\n      - UG: Uganda\n      - UA: Ukraine\n      - AE: United Arab Emirates\n      - GB: United Kingdom\n      - GB: England\n      - GB: Britain\n      - GB: Great Britain\n      - US: United States\n      - US: United States of America\n      - US: USA\n      - UM: United States Minor Outlying Islands\n      - UY: Uruguay\n      - UZ: Uzbekistan\n      - VU: Vanuatu\n      - EE: Vatican City State See Holy\n      - VE: Venezuela, Bolivarian Republic of\n      - VE: Venezuela\n      - VN: Viet Nam\n      - VG: Virgin Islands, British\n      - VI: Virgin Islands, U.S.\n      - WF: Wallis and Futuna\n      - EH: Western Sahara\n      - YE: Yemen\n      - ZM: Zambia\n      - ZW: Zimbabwe\n      "
+        },
+        {
+          "name": "geoCounty",
+          "kind": "ph::Str",
+          "doc": "Geographic subdivision of US state"
+        },
+        {
+          "name": "geoPostalCode",
+          "kind": "ph::Str",
+          "doc": "Geographic postal code; for US this is a five digit zip code"
+        },
+        {
+          "name": "geoState",
+          "kind": "ph::Str",
+          "doc": "State or province name; for US this is two letter state code.  This\ntag may also be used to model an adminstrative area betwen the `geoCity`\nand `geoCountry` level.\n",
+          "enum": "\n      - AL: Alabama\n      - AK: Alaska\n      - AS: American Samoa\n      - AZ: Arizona\n      - AR: Arkansas\n      - CA: California\n      - CO: Colorado\n      - CT: Connecticut\n      - DE: Delaware\n      - DC: District of Columbia\n      - FM: Federated States of Micronesia\n      - FL: Florida\n      - GA: Georgia\n      - GU: Guam\n      - HI: Hawaii\n      - ID: Idaho\n      - IL: Illinois\n      - IN: Indiana\n      - IA: Iowa\n      - KS: Kansas\n      - KY: Kentucky\n      - LA: Louisiana\n      - ME: Maine\n      - MH: Marshall Islands\n      - MD: Maryland\n      - MA: Massachusetts\n      - MI: Michigan\n      - MN: Minnesota\n      - MS: Mississippi\n      - MO: Missouri\n      - MT: Montana\n      - NE: Nebraska\n      - NV: Nevada\n      - NH: New Hampshire\n      - NJ: New Jersey\n      - NM: New Mexico\n      - NY: New York\n      - NC: North Carolina\n      - ND: North Dakota\n      - MP: Northern Mariana Islands\n      - OH: Ohio\n      - OK: Oklahoma\n      - OR: Oregon\n      - PW: Palau\n      - PA: Pennsylvania\n      - PR: Puerto Rico\n      - RI: Rhode Island\n      - SC: South Carolina\n      - SD: South Dakota\n      - TN: Tennessee\n      - TX: Texas\n      - UT: Utah\n      - VT: Vermont\n      - VI: Virgin Islands\n      - VA: Virginia\n      - WA: Washington\n      - WV: West Virginia\n      - WI: Wisconsin\n      - WY: Wyoming\n      "
+        },
+        {
+          "name": "geoStreet",
+          "kind": "ph::Str",
+          "doc": "Geographic street address and name"
+        },
+        {
+          "name": "tz",
+          "kind": "ph::TimeZoneName",
+          "doc": "TimeZone identifier for location"
+        }
+      ]
+    },
+    {
+      "name": "Grid",
+      "superkind": "ph::Any",
+      "doc": "Grid is a two dimension table of columns and rows.  Grids may be\nparameterized with their row type as a Dict kind.\n"
+    },
+    {
+      "name": "KindMeta",
+      "superkind": "ph::ValMeta",
+      "doc": "Kind definition meta data"
+    },
+    {
+      "name": "KindName",
+      "superkind": "ph::Str",
+      "doc": "Str restricted to legal kind name:\n - must start with ASCII upper case letter (a-z)\n - must contain only ASCII letters, digits, or underbar (a-z, A-Z, 0-9, _)\n - by convention use camel case (FooBarBaz)\n"
+    },
+    {
+      "name": "LibMeta",
+      "superkind": "ph::DefMeta",
+      "doc": "Library defintion meta data",
+      "tags": [
+        {
+          "name": "depends",
+          "kind": "ph::List<ph::Str>",
+          "doc": "Depenencies as a list of library names.  All libs must explicitly\ninclude \"ph\" in their depends list.\n"
+        },
+        {
+          "name": "uri",
+          "kind": "ph::Uri",
+          "doc": "HTTPS URI to use as a unique identifier for URI based technologies"
+        },
+        {
+          "name": "version",
+          "kind": "ph::Str",
+          "doc": "Version string formatted as decimal integers separated by a dot"
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "superkind": "ph::Any",
+      "doc": "Ordered list of zero or more values.  List may be parametered\nwith a kind if it contains a homogeneous value type.\n"
+    },
+    {
+      "name": "Marker",
+      "superkind": "ph::Scalar",
+      "doc": "Marker is a annotation used to add a qualifying label to a dict.  It has\nno meaningful value; rather its presense indicates \"type\" or \"is-a\" semantics.\n"
+    },
+    {
+      "name": "Mixin",
+      "superkind": "ph::Trait",
+      "doc": "Mixin models a set of tags used together"
+    },
+    {
+      "name": "NA",
+      "superkind": "ph::Scalar",
+      "doc": "Not available used to indicate invalid or missing data"
+    },
+    {
+      "name": "Number",
+      "superkind": "ph::Scalar",
+      "doc": "Integer or floating point numbers annotated with an optional unit.\nNumber kinds may be parametered with a unit name or unit quantity name\nfrom the unit database.  The parameter \"none\" may be used for define\na unitless number.\n"
+    },
+    {
+      "name": "Ref",
+      "superkind": "ph::Scalar",
+      "doc": "Reference to an Entity. Ref values are ASCII strings limited to the\nfollowing chars: a-z, A-Z, 0-9, underbar, colon, dash, dot, or tilde.\nRefs may be parameterized with a referent Dict kind name and direction\nas \"<<\" or \">>\".\n"
+    },
+    {
+      "name": "Scalar",
+      "superkind": "ph::Any",
+      "doc": "Scalar is an atomic value kind"
+    },
+    {
+      "name": "Str",
+      "superkind": "ph::Scalar",
+      "doc": "Unicode string of characters"
+    },
+    {
+      "name": "TagMeta",
+      "superkind": "ph::ValMeta",
+      "doc": "Tag definition meta data",
+      "tags": [
+        {
+          "name": "pointEnum",
+          "kind": "ph::EnumRange",
+          "doc": "Enumeration range which whould be  used by the point 'enum'\ntag when this marker tag is applied.\n"
+        },
+        {
+          "name": "pointUnits",
+          "kind": "ph::List<ph::Str>",
+          "doc": "List of valid units or unit quantities which should be used\nby the point 'unit' tag when this marker tag is applied.\n"
+        },
+        {
+          "name": "required",
+          "kind": "ph::Marker",
+          "doc": "Specifies the tag is required for the Dict kind to apply"
+        }
+      ]
+    },
+    {
+      "name": "TagName",
+      "superkind": "ph::Str",
+      "doc": "Str restricted to legal tag name:\n - must start with ASCII lower case letter (a-z)\n - must contain only ASCII letters, digits, or underbar (a-z, A-Z, 0-9, _)\n - by convention use camel case (fooBarBaz)\n"
+    },
+    {
+      "name": "Time",
+      "superkind": "ph::Scalar",
+      "doc": "ISO 8601 time as hour, minute, seconds: '09:51:27.354'"
+    },
+    {
+      "name": "TimeZoneName",
+      "superkind": "ph::Str",
+      "doc": "Timezone identifier which is city name from the zoneinfo database"
+    },
+    {
+      "name": "Trait",
+      "superkind": "ph::Any",
+      "doc": "Trait is a grouping of tag definitions"
+    },
+    {
+      "name": "UnitName",
+      "superkind": "ph::Str",
+      "doc": "Unit identifier string from the unit database"
+    },
+    {
+      "name": "Uri",
+      "superkind": "ph::Scalar",
+      "doc": "Unverisal resource identifier"
+    },
+    {
+      "name": "ValMeta",
+      "superkind": "ph::DefMeta",
+      "doc": "Value based meta data",
+      "tags": [
+        {
+          "name": "enum",
+          "kind": "ph::EnumRange",
+          "doc": "Specifies the range of a Bool or Str value"
+        }
+      ]
+    },
+    {
+      "name": "XStr",
+      "superkind": "ph::Scalar",
+      "doc": "Extended string - type name and string value encoding"
+    }
+  ]
+},
+{
+  "name": "phIoT",
+  "doc": "Project Haystack definitions for Internet of Things",
+  "depends": "\"[ph]\"",
+  "uri": "u:https://project-haystack.org/def/phIoT",
+  "version": "4.0.1",
+  "kinds": [
+    {
+      "name": "Ahu",
+      "superkind": "phIoT::Equip",
+      "doc": "Air handling unit",
+      "traits": ["phIoT::AhuDelivery", "phIoT::AirCoolingMethod", "phIoT::AirDuctwork", "phIoT::AirHeatingMethod", "phIoT::AirVolume"],
+      "tags": [
+        {
+          "name": "ahu",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Equip` as an `Ahu`",
+          "required": "m:"
+        },
+        {
+          "name": "spaceRef",
+          "kind": "phIoT::AirFlow >> phIoT::Space",
+          "doc": "Zone serviced by this AHU"
+        }
+      ]
+    },
+    {
+      "name": "AhuDelivery",
+      "superkind": "ph::Choice",
+      "doc": "AHU delivery of conditioned air to the zone",
+      "tags": [
+        {
+          "name": "chilledBeamZone",
+          "kind": "ph::Marker",
+          "doc": "AHU supplies air to chilled beam terminal units"
+        },
+        {
+          "name": "directZone",
+          "kind": "ph::Marker",
+          "doc": "AHU supplies air directly to the zone"
+        },
+        {
+          "name": "multiZone",
+          "kind": "ph::Marker",
+          "doc": "AHU discharge air is split into a duct per zone"
+        },
+        {
+          "name": "vavZone",
+          "kind": "ph::Marker",
+          "doc": "AHU supplies air to VAV terminal units"
+        }
+      ]
+    },
+    {
+      "name": "AirCoolingMethod",
+      "superkind": "ph::Choice",
+      "doc": "Method to cool air for conditioning spaces",
+      "tags": [
+        {
+          "name": "chilledWaterCool",
+          "kind": "ph::Marker",
+          "doc": "Cooling suppled by chilled water"
+        },
+        {
+          "name": "dxCool",
+          "kind": "ph::Marker",
+          "doc": "Cooling generated using direct expansion"
+        }
+      ]
+    },
+    {
+      "name": "AirDuctwork",
+      "superkind": "ph::Choice",
+      "doc": "Ductwork configuration",
+      "tags": [
+        {
+          "name": "dualDuct",
+          "kind": "ph::Marker",
+          "doc": "Two ducts: combination of hotDeck, coldDeck, or neutralDeck"
+        },
+        {
+          "name": "singleDuct",
+          "kind": "ph::Marker",
+          "doc": "One single duct"
+        },
+        {
+          "name": "tripleDuct",
+          "kind": "ph::Marker",
+          "doc": "Three ducts: hotDeck, coldDeck, or neutralDeck"
+        }
+      ]
+    },
+    {
+      "name": "AirFlow",
+      "superkind": "phIoT::Flow",
+      "doc": "Flow of air through ductwork as 'from >> to'"
+    },
+    {
+      "name": "AirHeatingMethod",
+      "superkind": "ph::Choice",
+      "doc": "Method to heat air for conditioning spaces",
+      "tags": [
+        {
+          "name": "elecHeat",
+          "kind": "ph::Marker",
+          "doc": "Heating is generated locally using electricity"
+        },
+        {
+          "name": "gasHeat",
+          "kind": "ph::Marker",
+          "doc": "Heating is generated locally using electricity"
+        },
+        {
+          "name": "hotWaterHeat",
+          "kind": "ph::Marker",
+          "doc": "Heating is supplied by hot water"
+        },
+        {
+          "name": "steamHeat",
+          "kind": "ph::Marker",
+          "doc": "Heating is supplied by steam"
+        }
+      ]
+    },
+    {
+      "name": "AirPoint",
+      "superkind": "phIoT::Point",
+      "doc": "Point related to air",
+      "traits": ["phIoT::AirPointQuantity", "phIoT::AirPointSection"],
+      "tags": [
+        {
+          "name": "air",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as an `AirPoint`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "AirPointQuantity",
+      "superkind": "ph::Choice",
+      "doc": "Quantity or apparatus of air measured or controlled",
+      "tags": [
+        {
+          "name": "damper",
+          "kind": "ph::Marker",
+          "doc": "Damper used to regulate or control the flow or pressure of air",
+          "pointUnits": "\"[%]\""
+        },
+        {
+          "name": "dewPoint",
+          "kind": "ph::Marker",
+          "doc": "Dew point temperature. This is temperature at which water vapor\nwill form dew\n",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "fan",
+          "kind": "ph::Marker",
+          "doc": "Fan used to blow air",
+          "pointUnits": "\"[%]\""
+        },
+        {
+          "name": "feelsLike",
+          "kind": "ph::Marker",
+          "doc": "Apparent temperature perceived when considering humidity, wind chill, and heat index",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "flow",
+          "kind": "ph::Marker",
+          "doc": "Volumetric air flow",
+          "pointUnits": "\"[volumetric flow]\""
+        },
+        {
+          "name": "humidity",
+          "kind": "ph::Marker",
+          "doc": "Percent relative humidity",
+          "pointUnits": "\"[%RH]\""
+        },
+        {
+          "name": "pressure",
+          "kind": "ph::Marker",
+          "doc": "Static air pressure",
+          "pointUnits": "\"[pressure]\""
+        },
+        {
+          "name": "temp",
+          "kind": "ph::Marker",
+          "doc": "Dry bulb air temperature",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "wetBulb",
+          "kind": "ph::Marker",
+          "doc": "Wet bulb air temperature.  This is temperature the air would have\nif cooled to saturation by the evaporation of water into it\n",
+          "pointUnits": "\"[°C, °F]\""
+        }
+      ]
+    },
+    {
+      "name": "AirPointSection",
+      "superkind": "ph::Choice",
+      "doc": "Equipment section where point is located",
+      "tags": [
+        {
+          "name": "discharge",
+          "kind": "ph::Marker",
+          "doc": "Point associated with discharge air duct"
+        },
+        {
+          "name": "entering",
+          "kind": "ph::Marker",
+          "doc": "Point associated with entering the equipment"
+        },
+        {
+          "name": "exhaust",
+          "kind": "ph::Marker",
+          "doc": "Point associated with exhaust air duct"
+        },
+        {
+          "name": "mixed",
+          "kind": "ph::Marker",
+          "doc": "Point associated with mixing air duct/chamber"
+        },
+        {
+          "name": "outside",
+          "kind": "ph::Marker",
+          "doc": "Point associated with outside air"
+        },
+        {
+          "name": "return",
+          "kind": "ph::Marker",
+          "doc": "Point associated with return air duct"
+        },
+        {
+          "name": "zone",
+          "kind": "ph::Marker",
+          "doc": "Point associated with conditioned zone"
+        }
+      ]
+    },
+    {
+      "name": "AirVolume",
+      "superkind": "ph::Choice",
+      "doc": "Ability to adjust volume of air flow",
+      "tags": [
+        {
+          "name": "constantVolume",
+          "kind": "ph::Marker",
+          "doc": "Constant volume of air flow, typically this means a single speed fan"
+        },
+        {
+          "name": "variableVolume",
+          "kind": "ph::Marker",
+          "doc": "Variable volume of air flow, typically using a VFD fan"
+        }
+      ]
+    },
+    {
+      "name": "ChilledWaterPlant",
+      "superkind": "phIoT::Plant",
+      "doc": "ChilledWaterPlant outputs chilled water for HVAC cooling",
+      "tags": [
+        {
+          "name": "chilled",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Plant` as a `ChilledWaterPlant`",
+          "required": "m:"
+        },
+        {
+          "name": "water",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Plant` as a `ChilledWaterPlant`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "CurPoint",
+      "superkind": "ph::Mixin",
+      "doc": "Point with support for a current value",
+      "tags": [
+        {
+          "name": "cur",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as a `CurPoint`",
+          "required": "m:"
+        },
+        {
+          "name": "curErr",
+          "kind": "ph::Str",
+          "doc": "Error message associated when `curStatus` indicates error condition"
+        },
+        {
+          "name": "curStatus",
+          "kind": "ph::Str",
+          "doc": "Status of point's current value reading",
+          "enum": "\n      - ok: all is okay\n      - stale: the point's curVal is not fresh data\n      - fault: a configuration problem - see `curErr`\n      - down: a communication or network problem - see `curErr`\n      - disabled: manual disable of the point or parent connector\n      - unknown: we don't know anything (usually boot state)\n      - remoteFault: point in remote system is fault\n      - remoteDown: point in remote system is down\n      - remoteDisabled: point in remote system is disabled\n      - remoteUnknown: point in remote system is unknown\n      "
+        },
+        {
+          "name": "curVal",
+          "kind": "ph::Scalar",
+          "doc": "Current value of the point"
+        }
+      ]
+    },
+    {
+      "name": "ElecFlow",
+      "superkind": "phIoT::Flow",
+      "doc": "Flow of electricity through wiring as 'from >> to'"
+    },
+    {
+      "name": "ElecMeter",
+      "superkind": "phIoT::Meter",
+      "doc": "Electricity meter",
+      "tags": [
+        {
+          "name": "elec",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Meter` as a `ElecMeter`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "ElecPoint",
+      "superkind": "phIoT::Point",
+      "doc": "Point related to electricity",
+      "traits": ["phIoT::ElecPointQuantity"],
+      "tags": [
+        {
+          "name": "elec",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as an `ElecPoint`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "ElecPointQuantity",
+      "superkind": "ph::Choice",
+      "doc": "Quantity of electricity measured or controlled",
+      "tags": [
+        {
+          "name": "current",
+          "kind": "ph::Marker",
+          "doc": "Electrical current",
+          "pointUnits": "\"[current]\""
+        },
+        {
+          "name": "energy",
+          "kind": "ph::Marker",
+          "doc": "Electrical energy consumed",
+          "pointUnits": "\"[energy]\""
+        },
+        {
+          "name": "freq",
+          "kind": "ph::Marker",
+          "doc": "Frequency of alternating current",
+          "pointUnits": "\"[Hz]\""
+        },
+        {
+          "name": "pf",
+          "kind": "ph::Marker",
+          "doc": "Electrical power factor",
+          "pointUnits": "\"[,]\""
+        },
+        {
+          "name": "power",
+          "kind": "ph::Marker",
+          "doc": "Electrical energy consumed per unit time",
+          "pointUnits": "\"[power]\""
+        },
+        {
+          "name": "volt",
+          "kind": "ph::Marker",
+          "doc": "Electrical voltage",
+          "pointUnits": "\"[voltage]\""
+        }
+      ]
+    },
+    {
+      "name": "Equip",
+      "superkind": "ph::Entity",
+      "doc": "Equipment asset",
+      "tags": [
+        {
+          "name": "equip",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Entity` as an `Equip`",
+          "required": "m:"
+        },
+        {
+          "name": "siteRef",
+          "kind": "ph::Contains << phIoT::Site",
+          "doc": "Site which contains this equipment"
+        }
+      ]
+    },
+    {
+      "name": "Flow",
+      "superkind": "ph::Ref",
+      "doc": "Flow relationship as 'from >> to'"
+    },
+    {
+      "name": "GasMeter",
+      "superkind": "phIoT::Meter",
+      "doc": "Natural gas meter",
+      "tags": [
+        {
+          "name": "gas",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Meter` as a `GasMeter`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "GasTank",
+      "superkind": "phIoT::Tank",
+      "doc": "Natural gas tank",
+      "tags": [
+        {
+          "name": "gas",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Tank` as a `GasTank`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "GasolineTank",
+      "superkind": "phIoT::Tank",
+      "doc": "Tank which stores gasoline",
+      "tags": [
+        {
+          "name": "gasoline",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Tank` as a `GasolineTank`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "HisPoint",
+      "superkind": "ph::Mixin",
+      "doc": "Historized point with a history log of timestamp/value pairs",
+      "tags": [
+        {
+          "name": "his",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as a `HisPoint`",
+          "required": "m:"
+        },
+        {
+          "name": "hisErr",
+          "kind": "ph::Str",
+          "doc": "Error message associated when `hisStatus` indicates error condition"
+        },
+        {
+          "name": "hisMode",
+          "kind": "ph::Str",
+          "doc": "Indicates the method of history data collection"
+        },
+        {
+          "name": "hisStatus",
+          "kind": "ph::Str",
+          "doc": "Status of point's current history collection or synchronization",
+          "enum": "\n      - ok: last sync attempt was successful\n      - fault: a configuration problem - see `hisErr`\n      - down: a communication or network problem - see `hisErr`\n      - disabled: manual disable of the point or parent connector\n      - unknown: we don't know anything (usually boot state)\n      - pending: sync has been scheduled and is waiting to running\n      - syncing: sync is currently running\n      "
+        },
+        {
+          "name": "hisTotalized",
+          "kind": "ph::Marker",
+          "doc": "History is an accumulation of incrementing values.  The\naccumulation of each interval is calcualted by computing\nthe delta from the previous timestamped value.\n"
+        }
+      ]
+    },
+    {
+      "name": "HotWaterPlant",
+      "superkind": "phIoT::Plant",
+      "doc": "HotWaterPlant outputs hot water for HVAC heating",
+      "tags": [
+        {
+          "name": "hot",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Plant` as a `HotWaterPlant`",
+          "required": "m:"
+        },
+        {
+          "name": "water",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Plant` as a `HotWaterPlant`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "Meter",
+      "superkind": "phIoT::Equip",
+      "doc": "Equipment to meter a substance or electricity",
+      "traits": ["phIoT::MeterScope"],
+      "tags": [
+        {
+          "name": "meter",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Equip` as a `Meter`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "MeterScope",
+      "superkind": "ph::Choice",
+      "doc": "Determines if meter is the site-level meter or a submeter",
+      "tags": [
+        {
+          "name": "siteMeter",
+          "kind": "ph::Marker",
+          "doc": "Indicates the site-level or main meter"
+        },
+        {
+          "name": "submeterOf",
+          "kind": "ph::Contains << phIoT::Meter",
+          "doc": "Submeter under the given meter"
+        }
+      ]
+    },
+    {
+      "name": "OilTank",
+      "superkind": "phIoT::Tank",
+      "doc": "Tank which stores fuel oil",
+      "tags": [
+        {
+          "name": "oil",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Tank` as a `OilTank`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "Plant",
+      "superkind": "phIoT::Equip",
+      "doc": "Plant used to generate a substance",
+      "tags": [
+        {
+          "name": "plant",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Equip` as a `Plant`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "Point",
+      "superkind": "ph::Entity",
+      "doc": "Data point such as a sensor or actuator",
+      "traits": ["phIoT::CurPoint", "phIoT::HisPoint", "phIoT::PointType", "phIoT::WritablePoint"],
+      "tags": [
+        {
+          "name": "enum",
+          "kind": "ph::EnumRange",
+          "doc": "Enuermated string names for Bool or Str points"
+        },
+        {
+          "name": "equipRef",
+          "kind": "ph::Contains << phIoT::Equip",
+          "doc": "Equip which contains this point"
+        },
+        {
+          "name": "kind",
+          "kind": "ph::Str",
+          "doc": "Point value type",
+          "enum": "\n      - Bool: model digital points as true/false.  Bool points may\n        also define an `enum` tag for the text to use for the true/false states\n      - Number: model analog ponts such as temperature or pressure.\n        These points should also include the `unit` to indicate the point's\n        unit of measurement.\n      - Str: models an enumerated point with a mode such as \"Off, Slow, Fast\".\n        Enumeraed points should also define an `enum` tag.\n      - Coord: models a point tracking geolocation coordinates\n      "
+        },
+        {
+          "name": "point",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Entity` as a `Point`",
+          "required": "m:"
+        },
+        {
+          "name": "siteRef",
+          "kind": "ph::Contains << phIoT::Site",
+          "doc": "Site which contains this point"
+        },
+        {
+          "name": "spaceRef",
+          "kind": "ph::Contains << phIoT::Space",
+          "doc": "Space which contains this point"
+        },
+        {
+          "name": "tz",
+          "kind": "ph::TimeZoneName",
+          "doc": "TimeZone identifier point's historical data logs"
+        },
+        {
+          "name": "unit",
+          "kind": "ph::UnitName",
+          "doc": "Unit of measurement for the point's value if numeric"
+        }
+      ]
+    },
+    {
+      "name": "PointType",
+      "superkind": "ph::Choice",
+      "doc": "Classifies point as a sensor, command, or setpoint",
+      "tags": [
+        {
+          "name": "cmd",
+          "kind": "ph::Marker",
+          "doc": "Point is a command, actuator, AO/BO"
+        },
+        {
+          "name": "sensor",
+          "kind": "ph::Marker",
+          "doc": "Point is a sensor, input, AI/BI"
+        },
+        {
+          "name": "sp",
+          "kind": "ph::Marker",
+          "doc": "Point is a setpoint, soft point, internal control variable, schedule"
+        }
+      ]
+    },
+    {
+      "name": "Site",
+      "superkind": "ph::Entity",
+      "doc": "Site is a single building or other facility.",
+      "traits": ["ph::GeoPlace"],
+      "tags": [
+        {
+          "name": "area",
+          "kind": "ph::Number<area>",
+          "doc": "Floor area of the building typically measured in ft² or m²"
+        },
+        {
+          "name": "primaryFunction",
+          "kind": "ph::Str",
+          "doc": "Primary function of site as US Energy Star key",
+          "enum": "\n      Adult Education\n      Ambulatory Surgical Center\n      Aquarium\n      Automobile Dealership\n      Bank Branch\n      Bar/Nightclub\n      Barracks\n      Bowling Alley\n      Casino\n      College/University\n      Convenience Store with Gas Station\n      Convenience Store without Gas Station\n      Convention Center\n      Courthouse\n      Data Center\n      Distribution Center\n      Drinking Water Treatment & Distribution\n      Enclosed Mall\n      Energy/Power Station\n      Fast Food Restaurant\n      Financial Office\n      Fire Station\n      Fitness Center/Health Club/Gym\n      Food Sales\n      Food Service\n      Hospital (General Medical & Surgical)\n      Hotel\n      Ice/Curling Rink\n      Indoor Arena\n      K-12 School\n      Laboratory\n      Library\n      Lifestyle Center\n      Mailing Center/Post Office\n      Manufacturing/Industrial Plant\n      Medical Office\n      Mixed Use Property\n      Movie Theater\n      Multifamily Housing\n      Museum\n      Non-Refrigerated Warehouse\n      Office\n      Other - Education\n      Other - Entertainment/Public Assembly\n      Other - Lodging/Residential\n      Other - Mall\n      Other - Public Services\n      Other - Recreation\n      Other - Restaurant/Bar\n      Other - Services\n      Other - Stadium\n      Other - Technology/Science\n      Other - Utility\n      Other\n      Other/Specialty Hospital\n      Outpatient Rehabilitation/Physical Therapy\n      Parking\n      Performing Arts\n      Personal Services (Health/Beauty, Dry Cleaning, etc)\n      Police Station\n      Pre-school/Daycare\n      Prison/Incarceration\n      Race Track\n      Refrigerated Warehouse\n      Repair Services (Vehicle, Shoe, Locksmith, etc)\n      Residence Hall/Dormitory\n      Restaurant\n      Retail Store\n      Roller Rink\n      Self-Storage Facility\n      Senior Care Community\n      Single Family Home\n      Social/Meeting Hall\n      Stadium (Closed)\n      Stadium (Open)\n      Strip Mall\n      Supermarket/Grocery Store\n      Swimming Pool\n      Transportation Terminal/Station\n      Urgent Care/Clinic/Other Outpatient\n      Veterinary Office\n      Vocational School\n      Wastewater Treatment Plant\n      Wholesale Club/Supercenter\n      Worship Facility\n      Zoo\n      "
+        },
+        {
+          "name": "site",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Entity` as a `Site`",
+          "required": "m:"
+        },
+        {
+          "name": "yearBuilt",
+          "kind": "ph::Number<none>",
+          "doc": "Original year of construction such as 1980"
+        }
+      ]
+    },
+    {
+      "name": "Space",
+      "superkind": "ph::Entity",
+      "doc": "Space is a three-dimensional volume in the built environment",
+      "tags": [
+        {
+          "name": "area",
+          "kind": "ph::Number<area>",
+          "doc": "Floor area of the space typically measured in ft² or m²"
+        },
+        {
+          "name": "siteRef",
+          "kind": "ph::Contains << phIoT::Site",
+          "doc": "Site which contains this space"
+        },
+        {
+          "name": "space",
+          "kind": "ph::Marker",
+          "doc": "Labels an Entity as an Space",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "SteamFlow",
+      "superkind": "phIoT::Flow",
+      "doc": "Flow of steam through piping as 'from >> to'"
+    },
+    {
+      "name": "SteamMeter",
+      "superkind": "phIoT::Meter",
+      "doc": "Steam meter",
+      "tags": [
+        {
+          "name": "steam",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Meter` as a `SteamMeter`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "SteamPlant",
+      "superkind": "phIoT::Plant",
+      "doc": "SteamPlant outputs steam for HVAC heating",
+      "tags": [
+        {
+          "name": "steam",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Plant` as a `SteamPlant`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "Tank",
+      "superkind": "phIoT::Equip",
+      "doc": "Storage tank vessel",
+      "tags": [
+        {
+          "name": "tank",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Equip` as a `Tank`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "Vav",
+      "superkind": "phIoT::Equip",
+      "doc": "Variable air volume terminal unit",
+      "traits": ["phIoT::AirDuctwork", "phIoT::AirHeatingMethod", "phIoT::VavAirFlow", "phIoT::VavType"],
+      "tags": [
+        {
+          "name": "ahuRef",
+          "kind": "phIoT::AirFlow << phIoT::Ahu",
+          "doc": "AHU which supplies air to this VAV"
+        },
+        {
+          "name": "spaceRef",
+          "kind": "phIoT::AirFlow >> phIoT::Space",
+          "doc": "Zone serviced by this VAV"
+        },
+        {
+          "name": "vav",
+          "kind": "ph::Marker",
+          "doc": "Labels an `Equip` as an `Vav`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "VavAirFlow",
+      "superkind": "ph::Choice",
+      "doc": " How does the VAV pull in air",
+      "tags": [
+        {
+          "name": "parallel",
+          "kind": "ph::Marker",
+          "doc": "VAV pulls air from outside the primary air flow"
+        },
+        {
+          "name": "series",
+          "kind": "ph::Marker",
+          "doc": "VAV pulls air from the primary air flow"
+        }
+      ]
+    },
+    {
+      "name": "VavType",
+      "superkind": "ph::Choice",
+      "doc": "Basic configuration of the VAV",
+      "tags": [
+        {
+          "name": "coolOnly",
+          "kind": "ph::Marker",
+          "doc": "Cooling only VAV without a fan"
+        },
+        {
+          "name": "fanPowered",
+          "kind": "ph::Marker",
+          "doc": "VAV contains a fan with reheat"
+        }
+      ]
+    },
+    {
+      "name": "WaterFlow",
+      "superkind": "phIoT::Flow",
+      "doc": "Flow of water through piping as 'from >> to'"
+    },
+    {
+      "name": "WaterMeter",
+      "superkind": "phIoT::Meter",
+      "doc": "Water meter",
+      "traits": ["phIoT::WaterType"],
+      "tags": [
+        {
+          "name": "water",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Meter` as a `WaterMeter`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "WaterPoint",
+      "superkind": "phIoT::Point",
+      "doc": "Point related to water",
+      "traits": ["phIoT::WaterPointQuantity", "phIoT::WaterPointSection", "phIoT::WaterType"],
+      "tags": [
+        {
+          "name": "water",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as an `WaterPoint`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "WaterPointQuantity",
+      "superkind": "ph::Choice",
+      "doc": "Quantity of water measured or controlled",
+      "tags": [
+        {
+          "name": "flow",
+          "kind": "ph::Marker",
+          "doc": "Volumetric water flow",
+          "pointUnits": "\"[gal/min, m³/s]\""
+        },
+        {
+          "name": "level",
+          "kind": "ph::Marker",
+          "doc": "Fill level of a tank as a percentage where 0% is empty and 100% is filled",
+          "pointUnits": "\"[%]\""
+        },
+        {
+          "name": "pressure",
+          "kind": "ph::Marker",
+          "doc": "Water pressure",
+          "pointUnits": "\"[psi, kPa]\""
+        },
+        {
+          "name": "pump",
+          "kind": "ph::Marker",
+          "doc": "Water pump",
+          "pointUnits": "\"[%]\""
+        },
+        {
+          "name": "temp",
+          "kind": "ph::Marker",
+          "doc": "Water temperature",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "valve",
+          "kind": "ph::Marker",
+          "doc": "Valve used to regulate or control the flow or pressure of water",
+          "pointUnits": "\"[%]\""
+        }
+      ]
+    },
+    {
+      "name": "WaterPointSection",
+      "superkind": "ph::Choice",
+      "doc": "Equipment section where point is located",
+      "tags": [
+        {
+          "name": "bypass",
+          "kind": "ph::Marker",
+          "doc": "Point associated with by-pass in the piping system"
+        },
+        {
+          "name": "delta",
+          "kind": "ph::Marker",
+          "doc": "Point associated with differential between entering and leaving"
+        },
+        {
+          "name": "entering",
+          "kind": "ph::Marker",
+          "doc": "Point associated with water entering the equipment"
+        },
+        {
+          "name": "leaving",
+          "kind": "ph::Marker",
+          "doc": "Point associated with water leaving the equipment"
+        }
+      ]
+    },
+    {
+      "name": "WaterTank",
+      "superkind": "phIoT::Tank",
+      "doc": "Tank which stores water",
+      "traits": ["phIoT::WaterType"],
+      "tags": [
+        {
+          "name": "water",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Tank` as a `WaterTank`",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "WaterType",
+      "superkind": "ph::Choice",
+      "doc": "Water usage type",
+      "tags": [
+        {
+          "name": "blowdown",
+          "kind": "ph::Marker",
+          "doc": "Water expelled from a system to remove mineral build up"
+        },
+        {
+          "name": "chilled",
+          "kind": "ph::Marker",
+          "doc": "Water used for HVAC cooling"
+        },
+        {
+          "name": "condenser",
+          "kind": "ph::Marker",
+          "doc": "Water used used to remove heat through condensation"
+        },
+        {
+          "name": "domestic",
+          "kind": "ph::Marker",
+          "doc": "Tap water for drinking, washing, cooking, and flushing of toliets"
+        },
+        {
+          "name": "hot",
+          "kind": "ph::Marker",
+          "doc": "Hot water used for HVAC heating or supply to hot taps"
+        },
+        {
+          "name": "makeup",
+          "kind": "ph::Marker",
+          "doc": "Water used used to makeup water loss through leaks, evaporation, or blowdown"
+        }
+      ]
+    },
+    {
+      "name": "Weather",
+      "superkind": "ph::Entity",
+      "doc": "Weather station",
+      "traits": ["ph::GeoPlace"],
+      "tags": [
+        {
+          "name": "weather",
+          "kind": "ph::Marker",
+          "doc": "Labels an Entity as a Weather",
+          "required": "m:"
+        }
+      ]
+    },
+    {
+      "name": "WeatherPoint",
+      "superkind": "phIoT::Point",
+      "doc": "Weather observation point",
+      "traits": ["phIoT::WeatherPointQuantity"],
+      "tags": [
+        {
+          "name": "weatherPoint",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as an `WeatherPoint`",
+          "required": "m:"
+        },
+        {
+          "name": "weatherRef",
+          "kind": "ph::Contains << phIoT::Weather",
+          "doc": "Weather station associated with the observation point"
+        }
+      ]
+    },
+    {
+      "name": "WeatherPointQuantity",
+      "superkind": "ph::Choice",
+      "doc": "Quantity of weather measured",
+      "tags": [
+        {
+          "name": "cloudage",
+          "kind": "ph::Marker",
+          "doc": "The fraction of the sky obscured by clouds.\nThis is also known as cloudiness or cloud amount.\n",
+          "pointUnits": "\"[%]\""
+        },
+        {
+          "name": "dewPoint",
+          "kind": "ph::Marker",
+          "doc": "Dew point temperature. This is temperature at which water vapor\nwill form dew\n",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "feelsLike",
+          "kind": "ph::Marker",
+          "doc": "Apparent temperature perceived when considering humidity, wind chill, and heat index",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "humidity",
+          "kind": "ph::Marker",
+          "doc": "Percent relative humidity",
+          "pointUnits": "\"[%RH]\""
+        },
+        {
+          "name": "precipitation",
+          "kind": "ph::Marker",
+          "doc": "Amount of atmospheric water vapor fallen.\nThis includes rain, drizzle, sleet, snow, and hail.\n",
+          "pointUnits": "\"[mm, in]\""
+        },
+        {
+          "name": "pressure",
+          "kind": "ph::Marker",
+          "doc": "Barometric pressure; the mean atmospheric pressure at sea level",
+          "pointUnits": "\"[mbar, inHg]\""
+        },
+        {
+          "name": "solarIrradiance",
+          "kind": "ph::Marker",
+          "doc": "The amount of energy arriving at the earth's surface",
+          "pointUnits": "\"[W/m²]\""
+        },
+        {
+          "name": "sunrise",
+          "kind": "ph::Marker",
+          "doc": "Historized trend of sunrise/sunsets as respective true/false transitions"
+        },
+        {
+          "name": "temp",
+          "kind": "ph::Marker",
+          "doc": "Dry bulb air temperature",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "visibility",
+          "kind": "ph::Marker",
+          "doc": "Distance at which light can be clearly discerned measured",
+          "pointUnits": "\"[km, mile]\""
+        },
+        {
+          "name": "weatherCond",
+          "kind": "ph::Marker",
+          "doc": "Enumeration of the weather conditions (clear, cloudy, etc)",
+          "pointEnum": "\n      unknown\n      clear\n      partlyCloudy\n      cloudy\n      showers\n      rain\n      thunderstorms\n      ice\n      flurries\n      snow\n      "
+        },
+        {
+          "name": "wetBulb",
+          "kind": "ph::Marker",
+          "doc": "Wet bulb air temperature.  This is temperature the air would have\nif cooled to saturation by the evaporation of water into it\n",
+          "pointUnits": "\"[°C, °F]\""
+        },
+        {
+          "name": "windDirection",
+          "kind": "ph::Marker",
+          "doc": "Compass direction from which wind originates.\nDirection is measured in degrees:\n   - North: 0° = 360°\n   - East: 90°\n   - South: 180°\n   - West: 270°\n",
+          "pointUnits": "\"[deg]\""
+        },
+        {
+          "name": "windSpeed",
+          "kind": "ph::Marker",
+          "doc": "Wind flow velocity",
+          "pointUnits": "\"[km/h, mph]\""
+        }
+      ]
+    },
+    {
+      "name": "WritablePoint",
+      "superkind": "ph::Mixin",
+      "doc": "Point with writable output using 16-level priority array.\nWritable points are points which model an output or setpoint and may be\ncommanded.  Writable points are modeled on the BACnet 16-level priority\narray with a relinquish default which effectively acts as level 17.\n\n The following levels have special behavior:\n  - **Level 1**: highest priority reserved for emergency overrides\n  - **Level 8**: manual override with ability to set timer to expire back to auto\n  - **Default**: implicitly acts as level 17 for relinquish default\n\n The priority array provides for contention resolution when many different\n control applications may be vying for control of a given point. Low level\n applications like scheduling typically control levels 14, 15, or 16. Then\n users can override at level 8. But a higher levels like 2 to 7 can be used\n to trump a user override (for example a demand response energy routine\n that requires higher priority).\n\n The actual value to write is resolved by starting at level 1 and working down\n to relinquish default to find the first non-null value. It is possible for\n all levels to be null, in which case the overall write output is null (which\n in turn may be auto/null to another system). Anytime a null value is written\n to a priority level, we say that level has been set to auto or released (this\n allows the next highest level to take command of the output).\n",
+      "tags": [
+        {
+          "name": "writable",
+          "kind": "ph::Marker",
+          "doc": "Labels a `Point` as a `WritablePoint`",
+          "required": "m:"
+        },
+        {
+          "name": "writeErr",
+          "kind": "ph::Str",
+          "doc": "Error message associated when `writeStatus` indicates an error condition."
+        },
+        {
+          "name": "writeLevel",
+          "kind": "ph::Number",
+          "doc": "Current priority level for `writeVal` as number between 1 and 17.\nThe value 17 indicates the relinquish default value.\n"
+        },
+        {
+          "name": "writeStatus",
+          "kind": "ph::Str",
+          "doc": "Current status of a writable point output",
+          "enum": "\n    - unbound: writable point is not bound to any output\n    - ok: last write was successful\n    - down: connectivity/networking problem - see `writeErr`\n    - fault: configuration error  - see `writeErr`\n    - disabled: manual disable of the point or parent connector\n    - unknown: we don't know anything (typically boot state)\n    "
+        },
+        {
+          "name": "writeVal",
+          "kind": "ph::Scalar",
+          "doc": "Current desired value to write to output.  this is the current \"winning\"\nvalue of the priority array, or if this tag is missing then the winning\nvalue is null.\n"
+        }
+      ]
+    }
+  ]
+}
+]

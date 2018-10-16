@@ -1,0 +1,5498 @@
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+brick:Ahu rdfs:subClassOf brick:Equip ;
+    bf:hasTag brick:ahu ;
+    bf:hasTrait brick:AhuDelivery,
+        brick:AirCoolingMethod,
+        brick:AirDuctwork,
+        brick:AirHeatingMethod,
+        brick:AirVolume .
+
+brick:AirFlow rdfs:subClassOf brick:Flow .
+
+brick:ChilledWaterPlant rdfs:subClassOf brick:Plant ;
+    bf:hasTag brick:chilled,
+        brick:water .
+
+brick:ElecFlow rdfs:subClassOf brick:Flow .
+
+brick:ElecMeter rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:elec .
+
+brick:GasMeter rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:gas .
+
+brick:GasTank rdfs:subClassOf brick:Tank ;
+    bf:hasTag brick:gas .
+
+brick:GasolineTank rdfs:subClassOf brick:Tank ;
+    bf:hasTag brick:gasoline .
+
+brick:HotWaterPlant rdfs:subClassOf brick:Plant ;
+    bf:hasTag brick:hot,
+        brick:water .
+
+brick:OilTank rdfs:subClassOf brick:Tank ;
+    bf:hasTag brick:oil .
+
+brick:Site rdfs:subClassOf brick:Entity ;
+    bf:hasTag brick:site ;
+    bf:hasTrait brick:GeoPlace .
+
+brick:Space rdfs:subClassOf brick:Entity ;
+    bf:hasTag brick:space .
+
+brick:SteamFlow rdfs:subClassOf brick:Flow .
+
+brick:SteamMeter rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:steam .
+
+brick:SteamPlant rdfs:subClassOf brick:Plant ;
+    bf:hasTag brick:steam .
+
+brick:Vav rdfs:subClassOf brick:Equip ;
+    bf:hasTag brick:vav ;
+    bf:hasTrait brick:AirDuctwork,
+        brick:AirHeatingMethod,
+        brick:VavAirFlow,
+        brick:VavType .
+
+brick:WaterFlow rdfs:subClassOf brick:Flow .
+
+brick:Weather rdfs:subClassOf brick:Entity ;
+    bf:hasTag brick:weather ;
+    bf:hasTrait brick:GeoPlace .
+
+brick:WeatherPoint rdfs:subClassOf brick:Point ;
+    bf:hasTag brick:weatherPoint ;
+    bf:hasTrait brick:WeatherPointQuantity .
+
+brick:air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper .
+
+brick:air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:sensor .
+
+brick:air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:sp .
+
+brick:air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint .
+
+brick:air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:sensor .
+
+brick:air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:sp .
+
+brick:air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:fan .
+
+brick:air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:sensor .
+
+brick:air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:sp .
+
+brick:air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:feelsLike .
+
+brick:air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:sensor .
+
+brick:air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:sp .
+
+brick:air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:flow .
+
+brick:air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:sensor .
+
+brick:air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:sp .
+
+brick:air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:humidity .
+
+brick:air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:sensor .
+
+brick:air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:sp .
+
+brick:air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:pressure .
+
+brick:air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:sensor .
+
+brick:air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:sp .
+
+brick:air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:temp .
+
+brick:air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sensor,
+        brick:temp .
+
+brick:air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sp,
+        brick:temp .
+
+brick:air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:wetBulb .
+
+brick:air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sp,
+        brick:wetBulb .
+
+brick:blowdown_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:flow,
+        brick:water .
+
+brick:blowdown_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:blowdown_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:blowdown_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:level,
+        brick:water .
+
+brick:blowdown_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:blowdown_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:blowdown_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:meter,
+        brick:water .
+
+brick:blowdown_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:blowdown,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:blowdown_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:blowdown,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:blowdown_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:pressure,
+        brick:water .
+
+brick:blowdown_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:blowdown_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:blowdown_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:pump,
+        brick:water .
+
+brick:blowdown_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:blowdown_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:blowdown_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:tank,
+        brick:water .
+
+brick:blowdown_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:blowdown,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:blowdown_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:blowdown,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:blowdown_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:temp,
+        brick:water .
+
+brick:blowdown_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:blowdown_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:blowdown_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:valve,
+        brick:water .
+
+brick:blowdown_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:blowdown_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_blowdown_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:flow,
+        brick:water .
+
+brick:bypass_blowdown_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_blowdown_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:bypass_blowdown_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:level,
+        brick:water .
+
+brick:bypass_blowdown_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_blowdown_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:bypass_blowdown_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_blowdown_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_blowdown_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_blowdown_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:pump,
+        brick:water .
+
+brick:bypass_blowdown_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_blowdown_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_blowdown_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:temp,
+        brick:water .
+
+brick:bypass_blowdown_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_blowdown_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_blowdown_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:cmd,
+        brick:valve,
+        brick:water .
+
+brick:bypass_blowdown_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_blowdown_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:bypass,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_chilled_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:flow,
+        brick:water .
+
+brick:bypass_chilled_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_chilled_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:bypass_chilled_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:level,
+        brick:water .
+
+brick:bypass_chilled_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_chilled_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:bypass_chilled_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_chilled_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_chilled_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_chilled_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:pump,
+        brick:water .
+
+brick:bypass_chilled_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_chilled_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_chilled_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:temp,
+        brick:water .
+
+brick:bypass_chilled_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_chilled_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_chilled_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:cmd,
+        brick:valve,
+        brick:water .
+
+brick:bypass_chilled_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_chilled_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:chilled,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_condenser_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:flow,
+        brick:water .
+
+brick:bypass_condenser_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_condenser_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:bypass_condenser_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:level,
+        brick:water .
+
+brick:bypass_condenser_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_condenser_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:bypass_condenser_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_condenser_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_condenser_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_condenser_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:pump,
+        brick:water .
+
+brick:bypass_condenser_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_condenser_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_condenser_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:temp,
+        brick:water .
+
+brick:bypass_condenser_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_condenser_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_condenser_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:condenser,
+        brick:valve,
+        brick:water .
+
+brick:bypass_condenser_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_condenser_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:condenser,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_domestic_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:flow,
+        brick:water .
+
+brick:bypass_domestic_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_domestic_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:bypass_domestic_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:level,
+        brick:water .
+
+brick:bypass_domestic_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_domestic_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:bypass_domestic_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_domestic_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_domestic_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_domestic_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:pump,
+        brick:water .
+
+brick:bypass_domestic_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_domestic_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_domestic_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:temp,
+        brick:water .
+
+brick:bypass_domestic_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_domestic_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_domestic_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:domestic,
+        brick:valve,
+        brick:water .
+
+brick:bypass_domestic_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_domestic_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:domestic,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_hot_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:flow,
+        brick:hot,
+        brick:water .
+
+brick:bypass_hot_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:flow,
+        brick:hot,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_hot_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:flow,
+        brick:hot,
+        brick:sp,
+        brick:water .
+
+brick:bypass_hot_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:hot,
+        brick:level,
+        brick:water .
+
+brick:bypass_hot_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_hot_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:bypass_hot_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:hot,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_hot_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_hot_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_hot_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:hot,
+        brick:pump,
+        brick:water .
+
+brick:bypass_hot_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_hot_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_hot_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:hot,
+        brick:temp,
+        brick:water .
+
+brick:bypass_hot_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_hot_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_hot_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:hot,
+        brick:valve,
+        brick:water .
+
+brick:bypass_hot_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_hot_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:hot,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:bypass_makeup_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:flow,
+        brick:makeup,
+        brick:water .
+
+brick:bypass_makeup_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:flow,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_makeup_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:flow,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:bypass_makeup_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:level,
+        brick:makeup,
+        brick:water .
+
+brick:bypass_makeup_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:level,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_makeup_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:level,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:bypass_makeup_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:makeup,
+        brick:pressure,
+        brick:water .
+
+brick:bypass_makeup_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_makeup_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:bypass_makeup_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:makeup,
+        brick:pump,
+        brick:water .
+
+brick:bypass_makeup_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:bypass_makeup_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:bypass_makeup_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:makeup,
+        brick:temp,
+        brick:water .
+
+brick:bypass_makeup_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:bypass_makeup_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:bypass_makeup_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:cmd,
+        brick:makeup,
+        brick:valve,
+        brick:water .
+
+brick:bypass_makeup_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:bypass_makeup_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:bypass,
+        brick:makeup,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:chilled_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:flow,
+        brick:water .
+
+brick:chilled_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:chilled_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:chilled_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:level,
+        brick:water .
+
+brick:chilled_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:chilled_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:chilled_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:meter,
+        brick:water .
+
+brick:chilled_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:chilled,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:chilled_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:chilled,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:chilled_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:pressure,
+        brick:water .
+
+brick:chilled_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:chilled_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:chilled_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:pump,
+        brick:water .
+
+brick:chilled_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:chilled_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:chilled_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:tank,
+        brick:water .
+
+brick:chilled_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:chilled,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:chilled_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:chilled,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:chilled_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:temp,
+        brick:water .
+
+brick:chilled_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:chilled_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:chilled_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:valve,
+        brick:water .
+
+brick:chilled_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:chilled_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:condenser_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:flow,
+        brick:water .
+
+brick:condenser_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:condenser_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:condenser_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:level,
+        brick:water .
+
+brick:condenser_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:condenser_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:condenser_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:meter,
+        brick:water .
+
+brick:condenser_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:condenser,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:condenser_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:condenser,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:condenser_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:pressure,
+        brick:water .
+
+brick:condenser_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:condenser_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:condenser_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:pump,
+        brick:water .
+
+brick:condenser_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:condenser_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:condenser_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:tank,
+        brick:water .
+
+brick:condenser_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:condenser,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:condenser_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:condenser,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:condenser_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:temp,
+        brick:water .
+
+brick:condenser_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:condenser_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:condenser_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:valve,
+        brick:water .
+
+brick:condenser_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:condenser_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_blowdown_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:flow,
+        brick:water .
+
+brick:delta_blowdown_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:delta_blowdown_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:delta_blowdown_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:level,
+        brick:water .
+
+brick:delta_blowdown_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:delta_blowdown_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:delta_blowdown_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:pressure,
+        brick:water .
+
+brick:delta_blowdown_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_blowdown_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_blowdown_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:pump,
+        brick:water .
+
+brick:delta_blowdown_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_blowdown_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_blowdown_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:temp,
+        brick:water .
+
+brick:delta_blowdown_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_blowdown_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_blowdown_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:delta,
+        brick:valve,
+        brick:water .
+
+brick:delta_blowdown_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_blowdown_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:delta,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_chilled_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:flow,
+        brick:water .
+
+brick:delta_chilled_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:delta_chilled_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:delta_chilled_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:level,
+        brick:water .
+
+brick:delta_chilled_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:delta_chilled_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:delta_chilled_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:pressure,
+        brick:water .
+
+brick:delta_chilled_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_chilled_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_chilled_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:pump,
+        brick:water .
+
+brick:delta_chilled_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_chilled_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_chilled_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:temp,
+        brick:water .
+
+brick:delta_chilled_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_chilled_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_chilled_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:delta,
+        brick:valve,
+        brick:water .
+
+brick:delta_chilled_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_chilled_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:delta,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_condenser_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:flow,
+        brick:water .
+
+brick:delta_condenser_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:delta_condenser_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:delta_condenser_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:level,
+        brick:water .
+
+brick:delta_condenser_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:delta_condenser_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:delta_condenser_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:pressure,
+        brick:water .
+
+brick:delta_condenser_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_condenser_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_condenser_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:pump,
+        brick:water .
+
+brick:delta_condenser_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_condenser_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_condenser_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:temp,
+        brick:water .
+
+brick:delta_condenser_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_condenser_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_condenser_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:delta,
+        brick:valve,
+        brick:water .
+
+brick:delta_condenser_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_condenser_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:delta,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_domestic_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:flow,
+        brick:water .
+
+brick:delta_domestic_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:delta_domestic_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:delta_domestic_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:level,
+        brick:water .
+
+brick:delta_domestic_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:delta_domestic_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:delta_domestic_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:pressure,
+        brick:water .
+
+brick:delta_domestic_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_domestic_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_domestic_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:pump,
+        brick:water .
+
+brick:delta_domestic_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_domestic_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_domestic_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:temp,
+        brick:water .
+
+brick:delta_domestic_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_domestic_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_domestic_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:domestic,
+        brick:valve,
+        brick:water .
+
+brick:delta_domestic_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_domestic_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:domestic,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_hot_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:flow,
+        brick:hot,
+        brick:water .
+
+brick:delta_hot_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:flow,
+        brick:hot,
+        brick:sensor,
+        brick:water .
+
+brick:delta_hot_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:flow,
+        brick:hot,
+        brick:sp,
+        brick:water .
+
+brick:delta_hot_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:hot,
+        brick:level,
+        brick:water .
+
+brick:delta_hot_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:delta_hot_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:delta_hot_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:hot,
+        brick:pressure,
+        brick:water .
+
+brick:delta_hot_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_hot_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_hot_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:hot,
+        brick:pump,
+        brick:water .
+
+brick:delta_hot_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_hot_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_hot_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:hot,
+        brick:temp,
+        brick:water .
+
+brick:delta_hot_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_hot_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_hot_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:hot,
+        brick:valve,
+        brick:water .
+
+brick:delta_hot_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_hot_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:hot,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:delta_makeup_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:flow,
+        brick:makeup,
+        brick:water .
+
+brick:delta_makeup_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:flow,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:delta_makeup_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:flow,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:delta_makeup_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:level,
+        brick:makeup,
+        brick:water .
+
+brick:delta_makeup_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:level,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:delta_makeup_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:level,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:delta_makeup_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:makeup,
+        brick:pressure,
+        brick:water .
+
+brick:delta_makeup_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:delta_makeup_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:delta_makeup_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:makeup,
+        brick:pump,
+        brick:water .
+
+brick:delta_makeup_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:delta_makeup_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:delta_makeup_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:makeup,
+        brick:temp,
+        brick:water .
+
+brick:delta_makeup_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:delta_makeup_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:delta_makeup_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:delta,
+        brick:makeup,
+        brick:valve,
+        brick:water .
+
+brick:delta_makeup_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:delta_makeup_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:delta,
+        brick:makeup,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:discharge_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:discharge .
+
+brick:discharge_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:discharge,
+        brick:sensor .
+
+brick:discharge_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:discharge,
+        brick:sp .
+
+brick:discharge_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:discharge .
+
+brick:discharge_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:discharge,
+        brick:sensor .
+
+brick:discharge_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:discharge,
+        brick:sp .
+
+brick:discharge_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:fan .
+
+brick:discharge_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:fan,
+        brick:sensor .
+
+brick:discharge_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:fan,
+        brick:sp .
+
+brick:discharge_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:feelsLike .
+
+brick:discharge_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:feelsLike,
+        brick:sensor .
+
+brick:discharge_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:feelsLike,
+        brick:sp .
+
+brick:discharge_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:flow .
+
+brick:discharge_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:flow,
+        brick:sensor .
+
+brick:discharge_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:flow,
+        brick:sp .
+
+brick:discharge_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:humidity .
+
+brick:discharge_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:humidity,
+        brick:sensor .
+
+brick:discharge_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:humidity,
+        brick:sp .
+
+brick:discharge_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:pressure .
+
+brick:discharge_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:pressure,
+        brick:sensor .
+
+brick:discharge_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:pressure,
+        brick:sp .
+
+brick:discharge_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:temp .
+
+brick:discharge_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:sensor,
+        brick:temp .
+
+brick:discharge_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:sp,
+        brick:temp .
+
+brick:discharge_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:discharge,
+        brick:wetBulb .
+
+brick:discharge_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:discharge_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:discharge,
+        brick:sp,
+        brick:wetBulb .
+
+brick:domestic_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:flow,
+        brick:water .
+
+brick:domestic_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:domestic_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:domestic_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:level,
+        brick:water .
+
+brick:domestic_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:domestic_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:domestic_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:meter,
+        brick:water .
+
+brick:domestic_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:domestic,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:domestic_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:domestic,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:domestic_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:pressure,
+        brick:water .
+
+brick:domestic_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:domestic_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:domestic_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:pump,
+        brick:water .
+
+brick:domestic_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:domestic_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:domestic_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:tank,
+        brick:water .
+
+brick:domestic_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:domestic,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:domestic_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:domestic,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:domestic_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:temp,
+        brick:water .
+
+brick:domestic_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:domestic_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:domestic_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:valve,
+        brick:water .
+
+brick:domestic_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:domestic_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:elec_current_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:current,
+        brick:elec .
+
+brick:elec_current_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:current,
+        brick:elec,
+        brick:sensor .
+
+brick:elec_current_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:current,
+        brick:elec,
+        brick:sp .
+
+brick:elec_energy_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:elec,
+        brick:energy .
+
+brick:elec_energy_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:energy,
+        brick:sensor .
+
+brick:elec_energy_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:energy,
+        brick:sp .
+
+brick:elec_freq_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:elec,
+        brick:freq .
+
+brick:elec_freq_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:freq,
+        brick:sensor .
+
+brick:elec_freq_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:freq,
+        brick:sp .
+
+brick:elec_pf_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:elec,
+        brick:pf .
+
+brick:elec_pf_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:pf,
+        brick:sensor .
+
+brick:elec_pf_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:pf,
+        brick:sp .
+
+brick:elec_power_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:elec,
+        brick:power .
+
+brick:elec_power_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:power,
+        brick:sensor .
+
+brick:elec_power_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:power,
+        brick:sp .
+
+brick:elec_volt_cmd rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:cmd,
+        brick:elec,
+        brick:volt .
+
+brick:elec_volt_sensor rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:sensor,
+        brick:volt .
+
+brick:elec_volt_sp rdfs:subClassOf brick:ElecPoint ;
+    bf:hasTag brick:elec,
+        brick:sp,
+        brick:volt .
+
+brick:entering_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:entering .
+
+brick:entering_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:entering,
+        brick:sensor .
+
+brick:entering_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:entering,
+        brick:sp .
+
+brick:entering_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:entering .
+
+brick:entering_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:entering,
+        brick:sensor .
+
+brick:entering_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:entering,
+        brick:sp .
+
+brick:entering_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:fan .
+
+brick:entering_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:fan,
+        brick:sensor .
+
+brick:entering_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:fan,
+        brick:sp .
+
+brick:entering_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:feelsLike .
+
+brick:entering_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:feelsLike,
+        brick:sensor .
+
+brick:entering_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:feelsLike,
+        brick:sp .
+
+brick:entering_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:flow .
+
+brick:entering_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:flow,
+        brick:sensor .
+
+brick:entering_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:flow,
+        brick:sp .
+
+brick:entering_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:humidity .
+
+brick:entering_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:humidity,
+        brick:sensor .
+
+brick:entering_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:humidity,
+        brick:sp .
+
+brick:entering_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:pressure .
+
+brick:entering_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:pressure,
+        brick:sensor .
+
+brick:entering_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:pressure,
+        brick:sp .
+
+brick:entering_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:temp .
+
+brick:entering_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:sensor,
+        brick:temp .
+
+brick:entering_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:sp,
+        brick:temp .
+
+brick:entering_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:entering,
+        brick:wetBulb .
+
+brick:entering_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:entering_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:entering,
+        brick:sp,
+        brick:wetBulb .
+
+brick:entering_blowdown_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:flow,
+        brick:water .
+
+brick:entering_blowdown_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:entering_blowdown_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:entering_blowdown_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:level,
+        brick:water .
+
+brick:entering_blowdown_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:entering_blowdown_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:entering_blowdown_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:pressure,
+        brick:water .
+
+brick:entering_blowdown_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_blowdown_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_blowdown_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:pump,
+        brick:water .
+
+brick:entering_blowdown_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_blowdown_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_blowdown_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:temp,
+        brick:water .
+
+brick:entering_blowdown_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_blowdown_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_blowdown_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:entering,
+        brick:valve,
+        brick:water .
+
+brick:entering_blowdown_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_blowdown_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:entering,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:entering_chilled_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:flow,
+        brick:water .
+
+brick:entering_chilled_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:entering_chilled_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:entering_chilled_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:level,
+        brick:water .
+
+brick:entering_chilled_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:entering_chilled_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:entering_chilled_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:pressure,
+        brick:water .
+
+brick:entering_chilled_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_chilled_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_chilled_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:pump,
+        brick:water .
+
+brick:entering_chilled_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_chilled_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_chilled_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:temp,
+        brick:water .
+
+brick:entering_chilled_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_chilled_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_chilled_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:entering,
+        brick:valve,
+        brick:water .
+
+brick:entering_chilled_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_chilled_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:entering,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:entering_condenser_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:flow,
+        brick:water .
+
+brick:entering_condenser_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:entering_condenser_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:entering_condenser_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:level,
+        brick:water .
+
+brick:entering_condenser_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:entering_condenser_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:entering_condenser_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:pressure,
+        brick:water .
+
+brick:entering_condenser_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_condenser_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_condenser_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:pump,
+        brick:water .
+
+brick:entering_condenser_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_condenser_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_condenser_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:temp,
+        brick:water .
+
+brick:entering_condenser_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_condenser_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_condenser_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:entering,
+        brick:valve,
+        brick:water .
+
+brick:entering_condenser_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_condenser_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:entering,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:entering_domestic_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:flow,
+        brick:water .
+
+brick:entering_domestic_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:flow,
+        brick:sensor,
+        brick:water .
+
+brick:entering_domestic_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:flow,
+        brick:sp,
+        brick:water .
+
+brick:entering_domestic_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:level,
+        brick:water .
+
+brick:entering_domestic_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:entering_domestic_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:entering_domestic_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:pressure,
+        brick:water .
+
+brick:entering_domestic_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_domestic_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_domestic_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:pump,
+        brick:water .
+
+brick:entering_domestic_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_domestic_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_domestic_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:temp,
+        brick:water .
+
+brick:entering_domestic_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_domestic_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_domestic_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:entering,
+        brick:valve,
+        brick:water .
+
+brick:entering_domestic_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_domestic_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:entering,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:entering_hot_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:flow,
+        brick:hot,
+        brick:water .
+
+brick:entering_hot_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:flow,
+        brick:hot,
+        brick:sensor,
+        brick:water .
+
+brick:entering_hot_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:flow,
+        brick:hot,
+        brick:sp,
+        brick:water .
+
+brick:entering_hot_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:hot,
+        brick:level,
+        brick:water .
+
+brick:entering_hot_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:entering_hot_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:entering_hot_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:hot,
+        brick:pressure,
+        brick:water .
+
+brick:entering_hot_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_hot_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_hot_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:hot,
+        brick:pump,
+        brick:water .
+
+brick:entering_hot_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_hot_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_hot_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:hot,
+        brick:temp,
+        brick:water .
+
+brick:entering_hot_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_hot_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_hot_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:hot,
+        brick:valve,
+        brick:water .
+
+brick:entering_hot_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_hot_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:hot,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:entering_makeup_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:flow,
+        brick:makeup,
+        brick:water .
+
+brick:entering_makeup_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:flow,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:entering_makeup_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:flow,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:entering_makeup_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:level,
+        brick:makeup,
+        brick:water .
+
+brick:entering_makeup_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:level,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:entering_makeup_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:level,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:entering_makeup_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:makeup,
+        brick:pressure,
+        brick:water .
+
+brick:entering_makeup_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:entering_makeup_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:entering_makeup_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:makeup,
+        brick:pump,
+        brick:water .
+
+brick:entering_makeup_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:entering_makeup_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:entering_makeup_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:makeup,
+        brick:temp,
+        brick:water .
+
+brick:entering_makeup_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:entering_makeup_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:entering_makeup_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:entering,
+        brick:makeup,
+        brick:valve,
+        brick:water .
+
+brick:entering_makeup_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:entering_makeup_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:entering,
+        brick:makeup,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:exhaust_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:exhaust .
+
+brick:exhaust_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:exhaust,
+        brick:sensor .
+
+brick:exhaust_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:exhaust,
+        brick:sp .
+
+brick:exhaust_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:exhaust .
+
+brick:exhaust_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:exhaust,
+        brick:sensor .
+
+brick:exhaust_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:exhaust,
+        brick:sp .
+
+brick:exhaust_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:fan .
+
+brick:exhaust_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:fan,
+        brick:sensor .
+
+brick:exhaust_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:fan,
+        brick:sp .
+
+brick:exhaust_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:feelsLike .
+
+brick:exhaust_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:feelsLike,
+        brick:sensor .
+
+brick:exhaust_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:feelsLike,
+        brick:sp .
+
+brick:exhaust_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:flow .
+
+brick:exhaust_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:flow,
+        brick:sensor .
+
+brick:exhaust_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:flow,
+        brick:sp .
+
+brick:exhaust_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:humidity .
+
+brick:exhaust_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:humidity,
+        brick:sensor .
+
+brick:exhaust_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:humidity,
+        brick:sp .
+
+brick:exhaust_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:pressure .
+
+brick:exhaust_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:pressure,
+        brick:sensor .
+
+brick:exhaust_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:pressure,
+        brick:sp .
+
+brick:exhaust_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:temp .
+
+brick:exhaust_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:sensor,
+        brick:temp .
+
+brick:exhaust_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:sp,
+        brick:temp .
+
+brick:exhaust_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:exhaust,
+        brick:wetBulb .
+
+brick:exhaust_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:exhaust_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:exhaust,
+        brick:sp,
+        brick:wetBulb .
+
+brick:hot_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:flow,
+        brick:hot,
+        brick:water .
+
+brick:hot_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:hot,
+        brick:sensor,
+        brick:water .
+
+brick:hot_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:hot,
+        brick:sp,
+        brick:water .
+
+brick:hot_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:level,
+        brick:water .
+
+brick:hot_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:hot_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:hot_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:meter,
+        brick:water .
+
+brick:hot_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:hot,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:hot_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:hot,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:hot_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:pressure,
+        brick:water .
+
+brick:hot_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:hot_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:hot_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:pump,
+        brick:water .
+
+brick:hot_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:hot_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:hot_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:tank,
+        brick:water .
+
+brick:hot_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:hot,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:hot_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:hot,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:hot_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:temp,
+        brick:water .
+
+brick:hot_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:hot_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:hot_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:valve,
+        brick:water .
+
+brick:hot_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:hot_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_blowdown_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:flow,
+        brick:leaving,
+        brick:water .
+
+brick:leaving_blowdown_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:flow,
+        brick:leaving,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_blowdown_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:flow,
+        brick:leaving,
+        brick:sp,
+        brick:water .
+
+brick:leaving_blowdown_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:leaving,
+        brick:level,
+        brick:water .
+
+brick:leaving_blowdown_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_blowdown_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:leaving_blowdown_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:leaving,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_blowdown_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_blowdown_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_blowdown_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:leaving,
+        brick:pump,
+        brick:water .
+
+brick:leaving_blowdown_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_blowdown_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_blowdown_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:leaving,
+        brick:temp,
+        brick:water .
+
+brick:leaving_blowdown_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_blowdown_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_blowdown_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:cmd,
+        brick:leaving,
+        brick:valve,
+        brick:water .
+
+brick:leaving_blowdown_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_blowdown_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:blowdown,
+        brick:leaving,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_chilled_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:flow,
+        brick:leaving,
+        brick:water .
+
+brick:leaving_chilled_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:flow,
+        brick:leaving,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_chilled_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:flow,
+        brick:leaving,
+        brick:sp,
+        brick:water .
+
+brick:leaving_chilled_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:leaving,
+        brick:level,
+        brick:water .
+
+brick:leaving_chilled_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_chilled_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:leaving_chilled_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:leaving,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_chilled_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_chilled_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_chilled_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:leaving,
+        brick:pump,
+        brick:water .
+
+brick:leaving_chilled_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_chilled_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_chilled_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:leaving,
+        brick:temp,
+        brick:water .
+
+brick:leaving_chilled_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_chilled_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_chilled_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:cmd,
+        brick:leaving,
+        brick:valve,
+        brick:water .
+
+brick:leaving_chilled_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_chilled_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:chilled,
+        brick:leaving,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_condenser_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:flow,
+        brick:leaving,
+        brick:water .
+
+brick:leaving_condenser_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:flow,
+        brick:leaving,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_condenser_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:flow,
+        brick:leaving,
+        brick:sp,
+        brick:water .
+
+brick:leaving_condenser_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:leaving,
+        brick:level,
+        brick:water .
+
+brick:leaving_condenser_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_condenser_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:leaving_condenser_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:leaving,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_condenser_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_condenser_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_condenser_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:leaving,
+        brick:pump,
+        brick:water .
+
+brick:leaving_condenser_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_condenser_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_condenser_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:leaving,
+        brick:temp,
+        brick:water .
+
+brick:leaving_condenser_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_condenser_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_condenser_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:condenser,
+        brick:leaving,
+        brick:valve,
+        brick:water .
+
+brick:leaving_condenser_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_condenser_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:condenser,
+        brick:leaving,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_domestic_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:flow,
+        brick:leaving,
+        brick:water .
+
+brick:leaving_domestic_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:flow,
+        brick:leaving,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_domestic_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:flow,
+        brick:leaving,
+        brick:sp,
+        brick:water .
+
+brick:leaving_domestic_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:leaving,
+        brick:level,
+        brick:water .
+
+brick:leaving_domestic_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_domestic_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:leaving_domestic_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:leaving,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_domestic_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_domestic_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_domestic_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:leaving,
+        brick:pump,
+        brick:water .
+
+brick:leaving_domestic_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_domestic_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_domestic_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:leaving,
+        brick:temp,
+        brick:water .
+
+brick:leaving_domestic_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_domestic_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_domestic_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:domestic,
+        brick:leaving,
+        brick:valve,
+        brick:water .
+
+brick:leaving_domestic_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_domestic_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:domestic,
+        brick:leaving,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_hot_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:flow,
+        brick:hot,
+        brick:leaving,
+        brick:water .
+
+brick:leaving_hot_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:hot,
+        brick:leaving,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_hot_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:hot,
+        brick:leaving,
+        brick:sp,
+        brick:water .
+
+brick:leaving_hot_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:leaving,
+        brick:level,
+        brick:water .
+
+brick:leaving_hot_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:level,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_hot_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:level,
+        brick:sp,
+        brick:water .
+
+brick:leaving_hot_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:leaving,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_hot_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_hot_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_hot_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:leaving,
+        brick:pump,
+        brick:water .
+
+brick:leaving_hot_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_hot_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_hot_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:leaving,
+        brick:temp,
+        brick:water .
+
+brick:leaving_hot_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_hot_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_hot_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:hot,
+        brick:leaving,
+        brick:valve,
+        brick:water .
+
+brick:leaving_hot_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_hot_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:hot,
+        brick:leaving,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:leaving_makeup_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:flow,
+        brick:leaving,
+        brick:makeup,
+        brick:water .
+
+brick:leaving_makeup_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:leaving,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_makeup_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:leaving,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:leaving_makeup_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:leaving,
+        brick:level,
+        brick:makeup,
+        brick:water .
+
+brick:leaving_makeup_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:level,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_makeup_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:level,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:leaving_makeup_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:leaving,
+        brick:makeup,
+        brick:pressure,
+        brick:water .
+
+brick:leaving_makeup_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_makeup_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:leaving_makeup_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:leaving,
+        brick:makeup,
+        brick:pump,
+        brick:water .
+
+brick:leaving_makeup_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:leaving_makeup_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:leaving_makeup_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:leaving,
+        brick:makeup,
+        brick:temp,
+        brick:water .
+
+brick:leaving_makeup_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:leaving_makeup_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:leaving_makeup_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:leaving,
+        brick:makeup,
+        brick:valve,
+        brick:water .
+
+brick:leaving_makeup_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:leaving_makeup_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:leaving,
+        brick:makeup,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:makeup_water_flow_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:flow,
+        brick:makeup,
+        brick:water .
+
+brick:makeup_water_flow_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:makeup_water_flow_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:flow,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:makeup_water_level_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:level,
+        brick:makeup,
+        brick:water .
+
+brick:makeup_water_level_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:level,
+        brick:makeup,
+        brick:sensor,
+        brick:water .
+
+brick:makeup_water_level_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:level,
+        brick:makeup,
+        brick:sp,
+        brick:water .
+
+brick:makeup_water_meter_cmd rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:meter,
+        brick:water .
+
+brick:makeup_water_meter_sensor rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:makeup,
+        brick:meter,
+        brick:sensor,
+        brick:water .
+
+brick:makeup_water_meter_sp rdfs:subClassOf brick:WaterMeter ;
+    bf:hasTag brick:makeup,
+        brick:meter,
+        brick:sp,
+        brick:water .
+
+brick:makeup_water_pressure_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:pressure,
+        brick:water .
+
+brick:makeup_water_pressure_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:pressure,
+        brick:sensor,
+        brick:water .
+
+brick:makeup_water_pressure_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:pressure,
+        brick:sp,
+        brick:water .
+
+brick:makeup_water_pump_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:pump,
+        brick:water .
+
+brick:makeup_water_pump_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:pump,
+        brick:sensor,
+        brick:water .
+
+brick:makeup_water_pump_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:pump,
+        brick:sp,
+        brick:water .
+
+brick:makeup_water_tank_cmd rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:tank,
+        brick:water .
+
+brick:makeup_water_tank_sensor rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:makeup,
+        brick:sensor,
+        brick:tank,
+        brick:water .
+
+brick:makeup_water_tank_sp rdfs:subClassOf brick:WaterTank ;
+    bf:hasTag brick:makeup,
+        brick:sp,
+        brick:tank,
+        brick:water .
+
+brick:makeup_water_temp_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:temp,
+        brick:water .
+
+brick:makeup_water_temp_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:sensor,
+        brick:temp,
+        brick:water .
+
+brick:makeup_water_temp_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:sp,
+        brick:temp,
+        brick:water .
+
+brick:makeup_water_valve_cmd rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:cmd,
+        brick:makeup,
+        brick:valve,
+        brick:water .
+
+brick:makeup_water_valve_sensor rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:sensor,
+        brick:valve,
+        brick:water .
+
+brick:makeup_water_valve_sp rdfs:subClassOf brick:WaterPoint ;
+    bf:hasTag brick:makeup,
+        brick:sp,
+        brick:valve,
+        brick:water .
+
+brick:meter_siteMeter_cmd rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:cmd,
+        brick:meter,
+        brick:siteMeter .
+
+brick:meter_siteMeter_sensor rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:meter,
+        brick:sensor,
+        brick:siteMeter .
+
+brick:meter_siteMeter_sp rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:meter,
+        brick:siteMeter,
+        brick:sp .
+
+brick:mixed_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:mixed .
+
+brick:mixed_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:mixed .
+
+brick:mixed_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:fan,
+        brick:mixed .
+
+brick:mixed_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:feelsLike,
+        brick:mixed .
+
+brick:mixed_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:flow,
+        brick:mixed .
+
+brick:mixed_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:humidity,
+        brick:mixed .
+
+brick:mixed_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:mixed,
+        brick:sensor .
+
+brick:mixed_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:mixed,
+        brick:sp .
+
+brick:mixed_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:mixed,
+        brick:pressure .
+
+brick:mixed_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:pressure,
+        brick:sensor .
+
+brick:mixed_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:pressure,
+        brick:sp .
+
+brick:mixed_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:mixed,
+        brick:temp .
+
+brick:mixed_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:sensor,
+        brick:temp .
+
+brick:mixed_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:sp,
+        brick:temp .
+
+brick:mixed_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:mixed,
+        brick:wetBulb .
+
+brick:mixed_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:mixed_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:mixed,
+        brick:sp,
+        brick:wetBulb .
+
+brick:outside_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:outside .
+
+brick:outside_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:outside .
+
+brick:outside_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:fan,
+        brick:outside .
+
+brick:outside_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:feelsLike,
+        brick:outside .
+
+brick:outside_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:flow,
+        brick:outside .
+
+brick:outside_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:humidity,
+        brick:outside .
+
+brick:outside_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:outside,
+        brick:sensor .
+
+brick:outside_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:outside,
+        brick:sp .
+
+brick:outside_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:outside,
+        brick:pressure .
+
+brick:outside_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:pressure,
+        brick:sensor .
+
+brick:outside_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:pressure,
+        brick:sp .
+
+brick:outside_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:outside,
+        brick:temp .
+
+brick:outside_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:sensor,
+        brick:temp .
+
+brick:outside_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:sp,
+        brick:temp .
+
+brick:outside_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:outside,
+        brick:wetBulb .
+
+brick:outside_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:outside_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:outside,
+        brick:sp,
+        brick:wetBulb .
+
+brick:return_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:return .
+
+brick:return_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:return,
+        brick:sp .
+
+brick:return_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:return .
+
+brick:return_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:return,
+        brick:sp .
+
+brick:return_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:fan,
+        brick:return .
+
+brick:return_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:return,
+        brick:sp .
+
+brick:return_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:feelsLike,
+        brick:return .
+
+brick:return_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:return,
+        brick:sp .
+
+brick:return_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:flow,
+        brick:return .
+
+brick:return_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:return,
+        brick:sp .
+
+brick:return_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:humidity,
+        brick:return .
+
+brick:return_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:return,
+        brick:sp .
+
+brick:return_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:pressure,
+        brick:return .
+
+brick:return_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:return,
+        brick:sensor .
+
+brick:return_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:return,
+        brick:sp .
+
+brick:return_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:return,
+        brick:temp .
+
+brick:return_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:return,
+        brick:sensor,
+        brick:temp .
+
+brick:return_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:return,
+        brick:sp,
+        brick:temp .
+
+brick:return_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:return,
+        brick:wetBulb .
+
+brick:return_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:return,
+        brick:sensor,
+        brick:wetBulb .
+
+brick:return_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:return,
+        brick:sp,
+        brick:wetBulb .
+
+brick:zone_air_damper_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:damper,
+        brick:zone .
+
+brick:zone_air_damper_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_damper_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:damper,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_dewPoint_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:dewPoint,
+        brick:zone .
+
+brick:zone_air_dewPoint_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_dewPoint_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:dewPoint,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_fan_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:fan,
+        brick:zone .
+
+brick:zone_air_fan_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_fan_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:fan,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_feelsLike_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:feelsLike,
+        brick:zone .
+
+brick:zone_air_feelsLike_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_feelsLike_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:feelsLike,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_flow_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:flow,
+        brick:zone .
+
+brick:zone_air_flow_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_flow_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:flow,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_humidity_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:humidity,
+        brick:zone .
+
+brick:zone_air_humidity_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_humidity_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:humidity,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_pressure_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:pressure,
+        brick:zone .
+
+brick:zone_air_pressure_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:sensor,
+        brick:zone .
+
+brick:zone_air_pressure_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:pressure,
+        brick:sp,
+        brick:zone .
+
+brick:zone_air_temp_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:temp,
+        brick:zone .
+
+brick:zone_air_temp_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sensor,
+        brick:temp,
+        brick:zone .
+
+brick:zone_air_temp_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sp,
+        brick:temp,
+        brick:zone .
+
+brick:zone_air_wetBulb_cmd rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:cmd,
+        brick:wetBulb,
+        brick:zone .
+
+brick:zone_air_wetBulb_sensor rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sensor,
+        brick:wetBulb,
+        brick:zone .
+
+brick:zone_air_wetBulb_sp rdfs:subClassOf brick:AirPoint ;
+    bf:hasTag brick:air,
+        brick:sp,
+        brick:wetBulb,
+        brick:zone .
+
+brick:AhuDelivery rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:chilledBeamZone,
+        brick:directZone,
+        brick:multiZone,
+        brick:vavZone .
+
+brick:AirCoolingMethod rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:chilledWaterCool,
+        brick:dxCool .
+
+brick:AirPointQuantity rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:damper,
+        brick:dewPoint,
+        brick:fan,
+        brick:feelsLike,
+        brick:flow,
+        brick:humidity,
+        brick:pressure,
+        brick:temp,
+        brick:wetBulb .
+
+brick:AirPointSection rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:discharge,
+        brick:entering,
+        brick:exhaust,
+        brick:mixed,
+        brick:outside,
+        brick:return,
+        brick:zone .
+
+brick:AirVolume rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:constantVolume,
+        brick:variableVolume .
+
+brick:CurPoint rdfs:subClassOf brick:Mixin ;
+    bf:hasTag brick:cur .
+
+brick:ElecPointQuantity rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:current,
+        brick:energy,
+        brick:freq,
+        brick:pf,
+        brick:power,
+        brick:volt .
+
+brick:HisPoint rdfs:subClassOf brick:Mixin ;
+    bf:hasTag brick:his,
+        brick:hisTotalized .
+
+brick:MeterScope rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:siteMeter .
+
+brick:PointType rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:cmd,
+        brick:sensor,
+        brick:sp .
+
+brick:VavAirFlow rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:parallel,
+        brick:series .
+
+brick:VavType rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:coolOnly,
+        brick:fanPowered .
+
+brick:WaterPointQuantity rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:flow,
+        brick:level,
+        brick:pressure,
+        brick:pump,
+        brick:temp,
+        brick:valve .
+
+brick:WaterPointSection rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:bypass,
+        brick:delta,
+        brick:entering,
+        brick:leaving .
+
+brick:WeatherPointQuantity rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:cloudage,
+        brick:dewPoint,
+        brick:feelsLike,
+        brick:humidity,
+        brick:precipitation,
+        brick:pressure,
+        brick:solarIrradiance,
+        brick:sunrise,
+        brick:temp,
+        brick:visibility,
+        brick:weatherCond,
+        brick:wetBulb,
+        brick:windDirection,
+        brick:windSpeed .
+
+brick:WritablePoint rdfs:subClassOf brick:Mixin ;
+    bf:hasTag brick:writable .
+
+brick:AirDuctwork rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:dualDuct,
+        brick:singleDuct,
+        brick:tripleDuct .
+
+brick:AirHeatingMethod rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:elecHeat,
+        brick:gasHeat,
+        brick:hotWaterHeat,
+        brick:steamHeat .
+
+brick:Plant rdfs:subClassOf brick:Equip ;
+    bf:hasTag brick:plant .
+
+brick:WaterType rdfs:subClassOf brick:Choice ;
+    bf:hasTag brick:blowdown,
+        brick:chilled,
+        brick:condenser,
+        brick:domestic,
+        brick:hot,
+        brick:makeup .
+
+brick:Flow rdfs:subClassOf brick:Ref .
+
+brick:Point rdfs:subClassOf brick:Entity ;
+    bf:hasTag brick:point ;
+    bf:hasTrait brick:CurPoint,
+        brick:HisPoint,
+        brick:PointType,
+        brick:WritablePoint .
+
+brick:Tank rdfs:subClassOf brick:Equip ;
+    bf:hasTag brick:tank .
+
+brick:Equip rdfs:subClassOf brick:Entity ;
+    bf:hasTag brick:equip .
+
+brick:Meter rdfs:subClassOf brick:Equip ;
+    bf:hasTag brick:meter ;
+    bf:hasTrait brick:MeterScope .
+
+brick:ElecPoint rdfs:subClassOf brick:Point ;
+    bf:hasTag brick:elec ;
+    bf:hasTrait brick:ElecPointQuantity .
+
+brick:WaterMeter rdfs:subClassOf brick:Meter ;
+    bf:hasTag brick:water ;
+    bf:hasTrait brick:WaterType .
+
+brick:WaterTank rdfs:subClassOf brick:Tank ;
+    bf:hasTag brick:water ;
+    bf:hasTrait brick:WaterType .
+
+brick:AirPoint rdfs:subClassOf brick:Point ;
+    bf:hasTag brick:air ;
+    bf:hasTrait brick:AirPointQuantity,
+        brick:AirPointSection .
+
+brick:WaterPoint rdfs:subClassOf brick:Point ;
+    bf:hasTag brick:water ;
+    bf:hasTrait brick:WaterPointQuantity,
+        brick:WaterPointSection,
+        brick:WaterType .
+
