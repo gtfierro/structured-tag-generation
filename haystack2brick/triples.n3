@@ -5232,6 +5232,12 @@ brick:ZoneAirWetbulbSp rdf:subClassOf brick:AirWetbulbSp ;
         brick:Wetbulb,
         brick:Zone .
 
+bf:hasDefinition a owl:ObjectProperty .
+
+bf:hasTag a owl:ObjectProperty .
+
+bf:hasTrait a owl:ObjectProperty .
+
 brick:Ahu a owl:Class,
         brick:Tag ;
     rdfs:subClassOf brick:Equip ;
@@ -7044,6 +7050,8 @@ brick:Elec a brick:Tag ;
     bf:hasDefinition "Labels a `Meter` as a `ElecMeter`",
         "Labels a `Point` as an `ElecPoint`" .
 
+brick:Trait a owl:Class .
+
 brick:WaterMeter a owl:Class ;
     rdfs:subClassOf brick:Meter ;
     bf:hasDefinition "Water meter" ;
@@ -7116,6 +7124,8 @@ brick:Meter a owl:Class,
         "Labels an `Equip` as a `Meter`" ;
     bf:hasTag brick:Meter ;
     bf:hasTrait brick:MeterScope .
+
+brick:Tag a owl:Class .
 
 brick:Blowdown a brick:Tag ;
     bf:hasDefinition "Water expelled from a system to remove mineral build up" .

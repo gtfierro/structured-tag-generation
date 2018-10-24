@@ -45,6 +45,13 @@ kinds_by_name = {x['name']: x for x in phiot['kinds']}
 # - BRICK.tag
 # - BRICK.trait
 
+# define the classes/structures
+G.add((BRICK.Tag, RDF.type, OWL.Class))
+G.add((BRICK.Trait, RDF.type, OWL.Class))
+G.add((BF.hasDefinition, RDF.type, OWL.ObjectProperty))
+G.add((BF.hasTrait, RDF.type, OWL.ObjectProperty))
+G.add((BF.hasTag, RDF.type, OWL.ObjectProperty))
+
 # want to RDF-ify each of the kinds defined in 'defs'
 for kindname, kinddef in kinds_by_name.items():
     # instantiate the 'name' as a class
